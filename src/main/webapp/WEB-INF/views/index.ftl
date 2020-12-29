@@ -6,6 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <p>Showing <a href="/car">all cars</a></p>
+        <p>Showing <a href="/SpringMvcExample/car">all cars</a></p>
     </body>
 </html>
