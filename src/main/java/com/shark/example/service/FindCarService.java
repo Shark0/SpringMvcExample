@@ -1,5 +1,7 @@
 package com.shark.example.service;
 
+import com.google.gson.Gson;
+import com.shark.example.dao.mapper.CarMapper;
 import com.shark.example.dao.pojo.CarDo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -12,12 +14,12 @@ import java.util.List;
 @Service
 public class FindCarService {
 
-    public final JdbcTemplate jdbcTemplate;
+    public final CarMapper carMapper;
 
     public List<CarDo> request() {
-        String sql = "select * from car";
-        List<CarDo> carList = jdbcTemplate.query(sql,
-                new BeanPropertyRowMapper(CarDo.class));
+        List<CarDo> carList = carMapper.findAll();
+        System.out.println("carList: " + new Gson().toJson(carList));
         return carList;
     }
+
 }

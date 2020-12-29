@@ -1,0 +1,9 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shark.example.dao.mapper.CarMapper">
+    <select id="findAll" resultType="com.shark.example.dao.pojo.CarDo">
+        SELECT *
+        FROM car
+    </select>
+</mapper>
