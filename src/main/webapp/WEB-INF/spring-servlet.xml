@@ -15,4 +15,7 @@
     </bean>
 
     <context:property-placeholder location="classpath:config/application.properties"/>
+
+    <mvc:annotation-driven />
+    <mvc:default-servlet-handler />
 </beans>

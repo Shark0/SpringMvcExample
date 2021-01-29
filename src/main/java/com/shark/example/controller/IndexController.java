@@ -6,17 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
+
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "/indx")
 public class IndexController {
 
-    @Value("${person.name}")
-    private String name;
-
     @GetMapping
-    public ModelAndView index() {
-        ModelAndView model = new ModelAndView("index");
-        model.addObject("name", name);
-        return model;
+    public HashMap read() {
+        return new HashMap();
     }
 }
