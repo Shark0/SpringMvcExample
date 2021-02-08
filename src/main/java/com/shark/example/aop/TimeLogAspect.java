@@ -6,16 +6,14 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 
 @Aspect
-@Component
 public class TimeLogAspect {
 
     public static final Logger logger = LoggerFactory.getLogger(TimeLogAspect.class);
 
-    @Around("@annotation(com.shark.example.aop.TimeLog)")
+    @Around("execution(* *(..)) && @annotation(com.shark.example.aop.TimeLog)")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         MethodSignature methodSignature = (MethodSignature) proceedingJoinPoint.getSignature();
         String className = methodSignature.getDeclaringType().getName();
