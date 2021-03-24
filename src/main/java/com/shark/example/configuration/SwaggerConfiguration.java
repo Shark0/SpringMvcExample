@@ -19,7 +19,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.shark.example.configuration"))
+                .apis(RequestHandlerSelectors.basePackage("com.shark.example.controller"))
                 .build()
                 .apiInfo(apiInfo());
     }
